@@ -23,10 +23,6 @@ class EditViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Set the attributes to the textfields
-        setUpTextField(topTextField)
-        setUpTextField(bottomTextField)
-        
         // Set up initial interface
         clearAll()
     }
@@ -43,7 +39,7 @@ class EditViewController: UIViewController {
         return true
     }
     
-    func setUpTextField(textField: UITextField) {
+    func setUpTextField(textField: UITextField, withText text: String) {
         
         let memeTextAttributes = [
             NSStrokeColorAttributeName : UIColor.blackColor(),
@@ -55,6 +51,7 @@ class EditViewController: UIViewController {
         textField.defaultTextAttributes = memeTextAttributes
         textField.textAlignment = .Center
         textField.delegate = self
+        textField.text = text
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -63,7 +60,7 @@ class EditViewController: UIViewController {
     }
     
     func save() {
-        let _ = Meme(upText: topTextField.text!, downText: bottomTextField.text!, image: pickedImage.image!, meme: getMemedImage())
+        let _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: pickedImage.image!, memedImage: getMemedImage())
     }
     
     func getMemedImage() -> UIImage {
@@ -90,9 +87,12 @@ class EditViewController: UIViewController {
     }
     
     func clearAll() {
+        // Clear images
         pickedImage.image = nil
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
+        
+        // Set the attributes to the textfields
+        setUpTextField(topTextField, withText: "TOP")
+        setUpTextField(bottomTextField, withText: "BOTTOM")
         
         // Disable share button
         shareButton.enabled = false
@@ -112,8 +112,8 @@ class EditViewController: UIViewController {
     
     func keyboardWillShow(notification: NSNotification) {
         // We should move the view if the textField to edit is the bottom one
-        if view.frame.origin.y >= 0 && bottomTextField.isFirstResponder() {
-            view.frame.origin.y -= getKeyboardHeight(notification)
+        if bottomTextField.isFirstResponder() {
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     

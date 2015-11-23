@@ -8,17 +8,11 @@
 
 import UIKit
 
-class Meme: NSObject {
+struct Meme {
     
     var topText: String
     var bottomText: String
     var originalImage: UIImage
     var memedImage: UIImage
     
-    init(upText: String, downText: String, image: UIImage, meme: UIImage) {
-        topText = upText
-        bottomText = downText
-        originalImage = image
-        memedImage = meme
-    }
 }
