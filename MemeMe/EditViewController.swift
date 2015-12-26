@@ -60,7 +60,16 @@ class EditViewController: UIViewController {
     }
     
     func save() {
-        let _ = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: pickedImage.image!, memedImage: getMemedImage())
+        //Create the meme
+        let meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: pickedImage.image!, memedImage: getMemedImage())
+        
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        
+        //We go back
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     func getMemedImage() -> UIImage {
@@ -166,6 +175,7 @@ class EditViewController: UIViewController {
     
     @IBAction func cancelEdit(sender: UIBarButtonItem) {
         clearAll()
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
