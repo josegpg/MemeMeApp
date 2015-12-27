@@ -19,6 +19,7 @@
 		D14645E21C2E5E9E0070251C /* SentMemesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14645E11C2E5E9E0070251C /* SentMemesCollectionViewController.swift */; };
 		D14645E41C2E68050070251C /* MemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14645E31C2E68050070251C /* MemeTableViewCell.swift */; };
 		D14645E61C2E68150070251C /* MemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14645E51C2E68150070251C /* MemeCollectionViewCell.swift */; };
+		D14645E81C2F3A000070251C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D14645E71C2F3A000070251C /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		D14645E11C2E5E9E0070251C /* SentMemesCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemesCollectionViewController.swift; sourceTree = "<group>"; };
 		D14645E31C2E68050070251C /* MemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTableViewCell.swift; sourceTree = "<group>"; };
 		D14645E51C2E68150070251C /* MemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeCollectionViewCell.swift; sourceTree = "<group>"; };
+		D14645E71C2F3A000070251C /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				D14645E11C2E5E9E0070251C /* SentMemesCollectionViewController.swift */,
 				D14645E31C2E68050070251C /* MemeTableViewCell.swift */,
 				D14645E51C2E68150070251C /* MemeCollectionViewCell.swift */,
+				D14645E71C2F3A000070251C /* DetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				D14645E61C2E68150070251C /* MemeCollectionViewCell.swift in Sources */,
 				D110CA3E1C02AB4C0009E656 /* EditViewController.swift in Sources */,
 				D110CA3C1C02AB4C0009E656 /* AppDelegate.swift in Sources */,
+				D14645E81C2F3A000070251C /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

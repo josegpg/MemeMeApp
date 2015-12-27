@@ -19,12 +19,18 @@ class EditViewController: UIViewController {
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
     let initialTexts = ["TOP", "BOTTOM"]
+    var memeToEdit: Meme?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Set up initial interface
         clearAll()
+        
+        // Set up initial meme if it's editing
+        if let meme = memeToEdit {
+            setUpWithMeme(meme)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -37,6 +43,15 @@ class EditViewController: UIViewController {
     
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    func setUpWithMeme(meme: Meme) {
+        pickedImage.image = meme.originalImage
+        setUpTextField(topTextField, withText: meme.topText)
+        setUpTextField(bottomTextField, withText: meme.bottomText)
+        
+        // Allow share
+        shareButton.enabled = true
     }
     
     func setUpTextField(textField: UITextField, withText text: String) {
