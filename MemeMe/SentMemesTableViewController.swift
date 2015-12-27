@@ -17,6 +17,7 @@ class SentMemesTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         tableView.allowsMultipleSelectionDuringEditing = false
+        navigationItem.leftBarButtonItem = editButtonItem()
     }
     
     override func viewWillAppear(animated: Bool) {
